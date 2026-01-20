@@ -1,0 +1,58 @@
+# WordPress
+wp-config.php
+wp-content/plugins/*/
+wp-content/themes/*/
+wp-content/uploads/
+wp-admin/
+wp-includes/
+.htaccess
+/index.php
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+debug.log
+
+# Dependencies
+node_modules/
+composer.lock
+
+# Build files
+dist/
+build/
+
+# Testing
+coverage/
+.phpunit.result.cache
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+*.tmp
+temp/
+tmp/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Lock files (optional - uncomment to include)
+# composer.lock
+# package-lock.json

@@ -1,17 +1,21 @@
-# Expense Tracker WordPress Plugin
+# 💰 Expense Tracker - WordPress Plugin
 
-A complete WordPress plugin for managing personal and business expenses with budget tracking, reporting, and categorization.
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![License](https://img.shields.io/badge/license-GPL%20v2%20or%20later-green.svg)
+![WordPress](https://img.shields.io/badge/WordPress-6.0+-blue.svg)
+![PHP](https://img.shields.io/badge/PHP-7.0+-blue.svg)
 
-## Features
+A powerful, professional-grade WordPress plugin for tracking personal and business expenses with real-time budget monitoring, detailed reporting, and comprehensive analytics.
 
-### Core Features
-- 💰 **Expense Management**: Add, edit, and delete expenses with detailed information
-- 📊 **Dashboard**: Real-time overview of your expenses
-- 🏷️ **Categories**: Create custom expense categories
-- 💼 **Budget Tracking**: Set and monitor budgets by category
-- 📈 **Reports & Analytics**: Visual reports with charts and statistics
-- 👥 **User-Specific**: Each user can track their own expenses
-- 📱 **Responsive Design**: Works perfectly on desktop and mobile devices
+## 🌟 Features
+
+### Core Functionality
+- 📊 **Smart Dashboard** - Real-time expense overview with summary cards
+- 💸 **Complete Expense Management** - Add, edit, delete expenses with rich details
+- 🏷️ **Custom Categories** - Create unlimited expense categories with color coding
+- 💼 **Budget Tracking** - Set and monitor category budgets with visual progress
+- 📈 **Advanced Reports** - Charts, analytics, and statistical insights
+- 📱 **Fully Responsive** - Works seamlessly on desktop, tablet, and mobile devices
 
 ### Payment Methods
 - Cash
@@ -20,7 +24,7 @@ A complete WordPress plugin for managing personal and business expenses with bud
 - Bank Transfer
 - Check
 
-### Default Categories
+### Default Categories (Customizable)
 - Food
 - Transportation
 - Utilities
@@ -29,25 +33,376 @@ A complete WordPress plugin for managing personal and business expenses with bud
 - Shopping
 - Other
 
-## Installation
+### Security Features
+- ✅ AJAX nonce verification on all requests
+- ✅ Role-based access control
+- ✅ User capability checking
+- ✅ Input sanitization and validation
+- ✅ SQL injection protection
+- ✅ User data isolation
 
-1. Download the plugin folder to your WordPress plugins directory:
+## 📋 Requirements
+
+- **WordPress**: 5.0 or higher
+- **PHP**: 7.0 or higher
+- **MySQL**: 5.6 or higher
+- **jQuery**: Included with WordPress
+
+## 🚀 Installation
+
+### Method 1: Upload via WordPress Admin
+1. Download the plugin as a ZIP file
+2. In WordPress admin, go to **Plugins** → **Add New**
+3. Click **Upload Plugin** and select the ZIP file
+4. Click **Install Now** and then **Activate**
+
+### Method 2: Manual Installation
+1. Extract the plugin folder to `wp-content/plugins/`:
+   ```bash
+   git clone https://github.com/yourusername/expense-tracker-wordpress.git wp-content/plugins/expense-tracker
    ```
-   wp-content/plugins/expense-tracker-plugin/
-   ```
+2. Activate the plugin through the WordPress Plugins admin menu
+3. The plugin automatically creates database tables on first activation
 
-2. Activate the plugin through the WordPress admin dashboard
-
-3. The plugin will automatically create the necessary database tables on activation
-
-## Usage
+## 💡 Quick Start
 
 ### For Administrators
 
-1. Navigate to **Expenses** in the WordPress admin menu
-2. **Dashboard**: View your expense summary and recent transactions
-3. **All Expenses**: Manage all expenses (add, edit, delete)
-4. **Categories**: Create and manage custom categories
+#### Access the Plugin
+1. Log in to WordPress admin dashboard
+2. Look for **Expenses** in the left sidebar
+
+#### Dashboard
+- View total expenses summary
+- See monthly spending overview
+- Check recent expense records
+- Quick action buttons for adding new expenses
+
+#### Manage Expenses
+1. Go to **Expenses → All Expenses**
+2. Click **+ Add New Expense**
+3. Fill in:
+   - Date
+   - Description
+   - Category
+   - Amount
+   - Payment Method
+4. Click **Save Expense**
+
+#### Create Categories
+1. Navigate to **Expenses → Categories**
+2. Click **+ Add New Category**
+3. Enter category details:
+   - Name (e.g., "Groceries")
+   - Description (optional)
+   - Color (visual identifier)
+4. Save
+
+#### Set Budgets
+1. Go to **Expenses → Budget**
+2. Click **+ Set Budget**
+3. Configure:
+   - Category
+   - Budget amount
+   - Period (Monthly, Weekly, Yearly)
+   - Start date
+4. Save
+
+#### View Reports
+1. Go to **Expenses → Reports**
+2. Use filters to refine data:
+   - Date range
+   - Category
+3. View charts and statistics
+4. Export as CSV (if enabled)
+
+### For Frontend Users
+
+#### Using Shortcodes
+
+**Full Tracker Widget:**
+```php
+[expense_tracker]
+```
+Displays a complete expense management interface for logged-in users.
+
+**Summary Widget:**
+```php
+[expense_summary]
+```
+Shows recent expenses summary with quick overview.
+
+## 📁 Project Structure
+
+```
+expense-tracker/
+│
+├── 📄 expense-tracker.php              # Main plugin file
+│
+├── 📂 includes/                         # Core classes
+│   ├── class-expense-tracker.php        # Main plugin class
+│   └── class-database.php               # Database operations & queries
+│
+├── 📂 admin/                            # Admin interface
+│   ├── class-admin.php                  # Admin functionality & AJAX handlers
+│   └── pages/
+│       ├── dashboard.php                # Dashboard overview
+│       ├── categories.php               # Category management
+│       ├── budget.php                   # Budget management
+│       └── reports.php                  # Reports & analytics
+│
+├── 📂 public/                           # Frontend functionality
+│   └── class-public.php                 # User-facing features
+│
+├── 📂 assets/                           # Stylesheets & scripts
+│   ├── css/
+│   │   ├── admin.css                   # Admin panel styles
+│   │   └── public.css                  # Frontend styles
+│   └── js/
+│       ├── admin.js                    # Admin interactions
+│       └── public.js                   # Frontend interactions
+│
+├── 📂 languages/                        # Internationalization
+│   └── expense-tracker.pot              # Translation template
+│
+├── 📄 README.md                         # This file
+├── 📄 SETUP_GUIDE.md                    # Detailed setup instructions
+└── 📄 DEVELOPMENT.md                    # Developer documentation
+```
+
+## 🗄️ Database Schema
+
+### wp_expenses
+```sql
+- id (bigint) - Primary key
+- user_id (bigint) - User reference
+- category (varchar) - Expense category
+- description (longtext) - Detailed description
+- amount (decimal) - Expense amount
+- expense_date (date) - Transaction date
+- payment_method (varchar) - How it was paid
+- status (varchar) - pending/completed
+- created_at (datetime) - Record creation timestamp
+- updated_at (datetime) - Last update timestamp
+```
+
+### wp_expense_categories
+```sql
+- id (bigint) - Primary key
+- user_id (bigint) - User reference
+- name (varchar) - Category name
+- description (longtext) - Category details
+- color (varchar) - Hex color code
+- icon (varchar) - Icon identifier
+- created_at (datetime) - Creation timestamp
+```
+
+### wp_expense_budgets
+```sql
+- id (bigint) - Primary key
+- user_id (bigint) - User reference
+- category (varchar) - Budget category
+- amount (decimal) - Budget limit
+- period (varchar) - monthly/weekly/yearly
+- start_date (date) - When budget starts
+- end_date (date) - When budget ends (optional)
+- created_at (datetime) - Creation timestamp
+```
+
+## 🔌 AJAX Endpoints
+
+### Expense Operations
+- `wp_ajax_add_expense` - Create new expense
+- `wp_ajax_edit_expense` - Update existing expense
+- `wp_ajax_delete_expense` - Remove expense
+- `wp_ajax_get_expenses` - Retrieve expenses list
+
+### Category Operations
+- `wp_ajax_add_category` - Create category
+- `wp_ajax_edit_category` - Update category
+- `wp_ajax_delete_category` - Remove category
+- `wp_ajax_get_categories` - Retrieve categories
+
+### Budget Operations
+- `wp_ajax_add_budget` - Create budget
+- `wp_ajax_edit_budget` - Update budget
+- `wp_ajax_delete_budget` - Remove budget
+- `wp_ajax_get_budgets` - Retrieve budgets
+
+## 🔐 Security
+
+All AJAX requests are protected with:
+- **Nonce verification** - CSRF protection
+- **Capability checks** - `manage_options` required for admin features
+- **Data sanitization** - All inputs are sanitized
+- **Prepared statements** - SQL injection prevention
+- **User isolation** - Users can only access their own data
+
+## 📊 Hooks & Filters
+
+The plugin provides several hooks for developers to extend functionality:
+
+### Actions
+```php
+// Before expense is added
+do_action('expense_tracker_before_add_expense', $expense_data);
+
+// After expense is added
+do_action('expense_tracker_after_add_expense', $expense_id);
+
+// When tables are created
+do_action('expense_tracker_tables_created');
+```
+
+### Filters
+```php
+// Filter expense data before saving
+apply_filters('expense_tracker_expense_data', $data);
+
+// Filter budget data before saving
+apply_filters('expense_tracker_budget_data', $data);
+
+// Filter report data
+apply_filters('expense_tracker_report_data', $expenses);
+```
+
+## 🛠️ Development
+
+### Setting Up Development Environment
+1. Clone the repository
+2. Install dependencies (if any)
+3. Enable WordPress debug mode in `wp-config.php`:
+   ```php
+   define('WP_DEBUG', true);
+   define('WP_DEBUG_LOG', true);
+   define('WP_DEBUG_DISPLAY', false);
+   ```
+
+### Code Standards
+- Follow [WordPress Coding Standards](https://developer.wordpress.org/coding-standards/)
+- Use proper nonce verification for AJAX requests
+- Sanitize all inputs, escape all outputs
+- Use prepared statements for database queries
+
+### Testing
+Before submitting contributions:
+1. Test in latest WordPress version
+2. Test with different user roles
+3. Verify AJAX functionality works
+4. Check responsive design
+5. Test in multiple browsers
+
+See [DEVELOPMENT.md](DEVELOPMENT.md) for detailed developer guide.
+
+## 📝 Changelog
+
+### Version 1.0.0 (January 2026)
+- ✅ Initial release
+- ✅ Complete expense management
+- ✅ Category management
+- ✅ Budget tracking
+- ✅ Reports & analytics
+- ✅ AJAX-based interface
+- ✅ Responsive design
+- ✅ User data isolation
+
+## 🤝 Contributing
+
+Contributions are welcome! To contribute:
+
+1. **Fork** the repository
+2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
+3. **Make your changes** following code standards
+4. **Test thoroughly**
+5. **Commit changes**: `git commit -m 'Add amazing feature'`
+6. **Push to branch**: `git push origin feature/amazing-feature`
+7. **Open a Pull Request**
+
+### Reporting Issues
+- Search existing issues first
+- Provide detailed description
+- Include WordPress version, PHP version, and steps to reproduce
+- Attach screenshots if relevant
+
+## 📄 License
+
+This project is licensed under the **GNU General Public License v2.0 or later** - see the [LICENSE](LICENSE) file for details.
+
+Permissions:
+- ✅ Commercial use
+- ✅ Modification
+- ✅ Distribution
+- ✅ Private use
+
+Conditions:
+- 📋 Disclose source
+- 📋 Include license
+- 📋 State changes
+- 📋 Same license
+
+## 📚 Documentation
+
+- **[SETUP_GUIDE.md](SETUP_GUIDE.md)** - Complete installation and usage guide
+- **[DEVELOPMENT.md](DEVELOPMENT.md)** - Developer guide with hooks and filters
+- **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)** - Project overview and features
+
+## 🆘 Support
+
+### Getting Help
+- 📖 Check the [SETUP_GUIDE.md](SETUP_GUIDE.md)
+- 🔍 Search [GitHub Issues](https://github.com/yourusername/expense-tracker-wordpress/issues)
+- 💬 Open a new issue with detailed information
+
+### Reporting Bugs
+Include:
+- WordPress version
+- PHP version
+- Detailed steps to reproduce
+- Expected vs actual behavior
+- Screenshots/error messages
+
+## 🎯 Roadmap
+
+Planned features for future releases:
+
+- [ ] CSV/PDF export functionality
+- [ ] Budget alert notifications
+- [ ] Recurring expense templates
+- [ ] Multi-currency support
+- [ ] Mobile app integration
+- [ ] Advanced filtering and search
+- [ ] Expense splitting
+- [ ] Team collaboration features
+
+## 👥 Credits
+
+**Development**: Your Name/Team
+**Version**: 1.0.0
+**Last Updated**: January 20, 2026
+
+## 💬 Feedback
+
+Have suggestions? Found a bug? Let us know!
+- 🌟 Star this repository if you find it useful
+- 🐛 Report issues on [GitHub Issues](https://github.com/yourusername/expense-tracker-wordpress/issues)
+- 💡 Share feature ideas in discussions
+
+## 📞 Contact
+
+- **Email**: your-email@example.com
+- **GitHub**: [@yourusername](https://github.com/yourusername)
+- **Website**: https://yourwebsite.com
+
+---
+
+<div align="center">
+
+**Made with ❤️ for the WordPress community**
+
+[⬆ Back to top](#-expense-tracker---wordpress-plugin)
+
+</div>
+
 5. **Budget**: Set budget limits for different categories
 6. **Reports**: View analytics and generate reports
 
