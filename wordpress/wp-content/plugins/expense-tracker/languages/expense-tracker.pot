@@ -1,0 +1,149 @@
+# Expense Tracker - Language File
+# Copyright (C) 2024
+# This file is distributed under the same license as the Expense Tracker package.
+#
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Expense Tracker 1.0.0\n"
+"POT-Creation-Date: 2024-01-20 00:00:00+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+
+#: expense-tracker.php:45
+msgid "Expense Tracker"
+msgstr "Expense Tracker"
+
+#: admin/class-admin.php:11
+msgid "All Expenses"
+msgstr "All Expenses"
+
+#: admin/class-admin.php:18
+msgid "Categories"
+msgstr "Categories"
+
+#: admin/class-admin.php:25
+msgid "Budget"
+msgstr "Budget"
+
+#: admin/class-admin.php:32
+msgid "Reports"
+msgstr "Reports"
+
+#: admin/pages/dashboard.php:22
+msgid "Expense Tracker Dashboard"
+msgstr "Expense Tracker Dashboard"
+
+#: admin/pages/dashboard.php:27
+msgid "Total Expenses"
+msgstr "Total Expenses"
+
+#: admin/pages/dashboard.php:31
+msgid "This Month"
+msgstr "This Month"
+
+#: admin/pages/dashboard.php:35
+msgid "Total Records"
+msgstr "Total Records"
+
+#: admin/pages/dashboard.php:42
+msgid "+ Add New Expense"
+msgstr "+ Add New Expense"
+
+#: admin/pages/dashboard.php:49
+msgid "Recent Expenses"
+msgstr "Recent Expenses"
+
+#: admin/pages/dashboard.php:53
+msgid "Date"
+msgstr "Date"
+
+#: admin/pages/dashboard.php:54
+msgid "Description"
+msgstr "Description"
+
+#: admin/pages/dashboard.php:55
+msgid "Category"
+msgstr "Category"
+
+#: admin/pages/dashboard.php:56
+msgid "Amount"
+msgstr "Amount"
+
+#: admin/pages/dashboard.php:57
+msgid "Payment Method"
+msgstr "Payment Method"
+
+#: admin/pages/dashboard.php:58
+msgid "Actions"
+msgstr "Actions"
+
+#: admin/pages/dashboard.php:70
+msgid "Edit"
+msgstr "Edit"
+
+#: admin/pages/dashboard.php:73
+msgid "Delete"
+msgstr "Delete"
+
+#: admin/pages/dashboard.php:81
+msgid "No expenses found"
+msgstr "No expenses found"
+
+#: admin/pages/dashboard.php:91
+msgid "Add New Expense"
+msgstr "Add New Expense"
+
+#: admin/pages/dashboard.php:96
+msgid "Date"
+msgstr "Date"
+
+#: admin/pages/dashboard.php:101
+msgid "Description"
+msgstr "Description"
+
+#: admin/pages/dashboard.php:102
+msgid "Enter description"
+msgstr "Enter description"
+
+#: admin/pages/dashboard.php:107
+msgid "Category"
+msgstr "Category"
+
+#: admin/pages/dashboard.php:116
+msgid "Amount"
+msgstr "Amount"
+
+#: admin/pages/dashboard.php:121
+msgid "Payment Method"
+msgstr "Payment Method"
+
+#: admin/pages/dashboard.php:131
+msgid "Save Expense"
+msgstr "Save Expense"
+
+#: admin/pages/dashboard.php:132
+msgid "Cancel"
+msgstr "Cancel"
+
+#: public/class-public.php:28
+msgid "Please log in to access the expense tracker."
+msgstr "Please log in to access the expense tracker."
+
+#: public/class-public.php:37
+msgid "My Expenses"
+msgstr "My Expenses"
+
+#: public/class-public.php:38
+msgid "+ Add Expense"
+msgstr "+ Add Expense"
+
+#: public/class-public.php:49
+msgid "F d, Y"
+msgstr "F d, Y"
+
+#: public/class-public.php:54
+msgid "No expenses recorded yet."
+msgstr "No expenses recorded yet."
